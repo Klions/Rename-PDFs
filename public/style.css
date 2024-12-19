@@ -1,0 +1,106 @@
+/* Geral */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #222738;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #6e7888;
+  min-height: 100vh;
+  padding: 10px;
+}
+
+.container {
+  background: #fff;
+  padding: 30px 50px;
+  border-radius: 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 700px;
+  max-width: 90%;
+  text-align: center;
+}
+
+h1 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+input[type="file"] {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 5px;
+  font-size: 18px;
+  width: 100%;
+  max-width: 400px;
+}
+
+#pasta {
+  width: 350px;
+  height: 35px;
+  margin-top: 5px;
+  font-size: 17px;
+  margin-bottom: 20px;
+}
+
+#simular {
+ margin-bottom:15px;
+}
+
+button {
+  background-color: #222738;
+  color: #fff;
+  border: 2px solid rgb(68, 17, 116);
+  padding: 15px 30px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  font-size: 18px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  background-color: rgb(148, 48, 241);
+  color: #fff;
+}
+
+button i {
+  color: rgb(148, 48, 241);
+  font-weight: bold;
+  pointer-events: none;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+}
+
+#response {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #4caf50;
+  text-align: center;
+}

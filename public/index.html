@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Renomeação de Arquivos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Renomeação de Arquivos PDF</h1>
+    <form id="formRenomeacao">
+      <label for="pasta">Caminho da pasta:</label>
+      <input type="text" id="pasta" name="pasta" required>
+
+      <label for="simular">Simulação:</label>
+      <input type="checkbox" id="simular" name="simular">
+
+      <button type="submit">Renomear Arquivos</button>
+    </form>
+
+    <div id="result"></div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
