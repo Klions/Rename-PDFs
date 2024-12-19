@@ -13,20 +13,26 @@ document.getElementById('formRenomeacao').addEventListener('submit', async (even
             body: JSON.stringify({ pasta, simular }),
         });
 
+        // Verificar se a resposta foi bem-sucedida (status 200-299)
         if (!response.ok) {
-            // Se a resposta não for OK, lançar erro
-            throw new Error(`Erro na requisição: ${response.statusText}`);
+            throw new Error(`Erro ${response.status}: ${response.statusText}`);
         }
 
-        // Tentar converter a resposta para JSON
-        const resultados = await response.json();
+        // Verificar o tipo de conteúdo da resposta
+        const contentType = response.headers.get('Content-Type');
+        if (contentType && contentType.includes('application/json')) {
+            // Se for JSON, analisar a resposta como JSON
+            const resultados = await response.json();
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = resultados.join('<br>');
+        } else {
+            // Se não for JSON, exibir uma mensagem de erro
+            const text = await response.text();
+            throw new Error('Resposta não foi em JSON: ' + text);
+        }
 
-        // Atualizar a interface com os resultados
-        const resultDiv = document.getElementById('result');
-        resultDiv.innerHTML = resultados.join('<br>');
     } catch (error) {
         console.error('Erro ao realizar a requisição:', error);
-        // Exibir erro para o usuário
         const resultDiv = document.getElementById('result');
         resultDiv.innerHTML = 'Houve um erro ao processar sua solicitação. Por favor, tente novamente.';
     }
